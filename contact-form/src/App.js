@@ -29,7 +29,11 @@ const App = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/contact', formData);
+      //await axios.post('http://localhost:5000/api/contact', formData);
+      await axios.post(
+        'https://test-for-namasthe-server.vercel.app/api/contact',
+        formData
+      );
       alert('Email sent successfully');
       localStorage.removeItem('contactForm');
       setFormData({ name: '', email: '', message: '' });
@@ -75,5 +79,3 @@ const App = () => {
 };
 
 export default App;
-
-
